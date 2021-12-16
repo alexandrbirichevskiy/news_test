@@ -2,4 +2,8 @@
     <string name="app_name">News Test</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="puplication_date_text">Дата публикации :</string>
+    <string name="author_text">Автор :</string>
+    <string name="descriprion_text">Описание :</string>
+    <string name="url_to_article">Ссылка на статью :</string>
 </resources>
