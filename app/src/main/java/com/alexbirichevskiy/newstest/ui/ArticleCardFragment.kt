@@ -1,11 +1,13 @@
-package com.alexbirichevskiy.newstest
+package com.alexbirichevskiy.newstest.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alexbirichevskiy.newstest.R
 import com.alexbirichevskiy.newstest.databinding.FragmentArticleCardBinding
+import com.alexbirichevskiy.newstest.domain.entities.Article
 import com.bumptech.glide.Glide
 
 class ArticleCardFragment : Fragment() {

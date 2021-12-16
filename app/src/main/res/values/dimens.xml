@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="articles_text_size">15sp</dimen>
+    <dimen name="horizontal_margin_items">25dp</dimen>
+    <dimen name="horizontal_margin_titles">15dp</dimen>
+    <dimen name="horizontal_margin_articles">18dp</dimen>
+    <dimen name="margin_top_items">15dp</dimen>
+    <dimen name="margin_end_titles">10dp</dimen>
+</resources>
