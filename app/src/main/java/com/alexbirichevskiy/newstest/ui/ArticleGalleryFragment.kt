@@ -26,6 +26,10 @@ class ArticleGalleryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val url = arguments?.getString(SECOND_TAG)
         Glide.with(this).load(url).into(binding.articleGalleryImageView)
+
+        binding.galleryFragmentContainer.setOnClickListener {
+
+        }
     }
 
     override fun onDestroyView() {

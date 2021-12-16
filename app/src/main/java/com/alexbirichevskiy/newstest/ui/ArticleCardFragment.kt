@@ -35,6 +35,10 @@ class ArticleCardFragment : Fragment() {
         binding.articleCardTitleTextView.text = myData.title
         binding.articleCardUrlTextView.text = myData.url
 
+        binding.articleCardContainer.setOnClickListener {
+
+        }
+
         Glide.with(this).load(myData.urlToImage).into(binding.articleCardImageView)
 
         binding.articleCardImageView.setOnClickListener {
