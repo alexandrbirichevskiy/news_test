@@ -1,5 +1,6 @@
 package com.alexbirichevskiy.newstest.data.repositoryImpl
 
+import android.util.Log
 import com.alexbirichevskiy.newstest.data.ArticleDao
 import com.alexbirichevskiy.newstest.domain.entities.Article
 import com.alexbirichevskiy.newstest.domain.repository.ArticleRepository
@@ -24,6 +25,9 @@ class ArticleRepositoryDbImpl @Inject constructor(private val articleDao: Articl
                 if (!it.contains(article.url)) {
                     articleDao.put(article)
                         .subscribeOn(Schedulers.io())
+                        .doOnError {
+                            Log.d("@@@@", it.toString())
+                        }
                         .subscribe()
                 }
             }
