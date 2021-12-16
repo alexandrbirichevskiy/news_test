@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alexbirichevskiy.newstest.Const.SECOND_TAG
+import com.alexbirichevskiy.newstest.Const.TAG
 import com.alexbirichevskiy.newstest.R
 import com.alexbirichevskiy.newstest.databinding.FragmentArticleCardBinding
 import com.alexbirichevskiy.newstest.domain.entities.Article
@@ -25,7 +27,7 @@ class ArticleCardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val list: List<Article> = arguments?.getParcelableArrayList("123")!!
+        val list: List<Article> = arguments?.getParcelableArrayList(TAG)!!
         val myData = list[0]
         binding.articleCardAuthorTextView.text = myData.author
         binding.articleCardDescriptionTextView.text = myData.description
@@ -39,12 +41,12 @@ class ArticleCardFragment : Fragment() {
             val articleGalleryFragment = ArticleGalleryFragment()
 
             articleGalleryFragment.arguments = Bundle().apply {
-                putString("456", myData.urlToImage)
+                putString(SECOND_TAG, myData.urlToImage)
             }
 
             activity?.supportFragmentManager?.beginTransaction()
                 ?.replace(R.id.activity_main_frame_layout_container, articleGalleryFragment)
-                ?.addToBackStack("Lol1")
+                ?.addToBackStack(null)
                 ?.commit()
         }
     }

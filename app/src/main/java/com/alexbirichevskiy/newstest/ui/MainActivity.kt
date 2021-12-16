@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexbirichevskiy.newstest.App
+import com.alexbirichevskiy.newstest.Const.TAG
 import com.alexbirichevskiy.newstest.OnArticleClickListener
 import com.alexbirichevskiy.newstest.R
 import com.alexbirichevskiy.newstest.RecyclerViewAdapter
@@ -33,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("@@@@", "OnCreate")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     fun openFragment(articleCardFragment: ArticleCardFragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.activity_main_frame_layout_container, articleCardFragment)
-            .addToBackStack("LOL")
+            .addToBackStack(null)
             .commit()
     }
 
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         val articleCardFragment = ArticleCardFragment()
 
         articleCardFragment.arguments = Bundle().apply {
-            putParcelableArrayList("123", arrayListOf(article))
+            putParcelableArrayList(TAG, arrayListOf(article))
         }
         return articleCardFragment
     }
