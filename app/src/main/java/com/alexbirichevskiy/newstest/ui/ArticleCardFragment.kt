@@ -11,6 +11,9 @@ import com.alexbirichevskiy.newstest.R
 import com.alexbirichevskiy.newstest.databinding.FragmentArticleCardBinding
 import com.alexbirichevskiy.newstest.domain.entities.Article
 import com.bumptech.glide.Glide
+import android.content.Intent
+import android.net.Uri
+
 
 class ArticleCardFragment : Fragment() {
 
@@ -39,6 +42,10 @@ class ArticleCardFragment : Fragment() {
 
         }
 
+        binding.articleCardUrlTextView.setOnClickListener {
+            openBrowser(myData.url)
+        }
+
         Glide.with(this).load(myData.urlToImage).into(binding.articleCardImageView)
 
         binding.articleCardImageView.setOnClickListener {
@@ -53,6 +60,14 @@ class ArticleCardFragment : Fragment() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
+    }
+
+    fun openBrowser(url: String) {
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse(url)
+        )
+        startActivity(intent)
     }
 
     override fun onDestroyView() {
